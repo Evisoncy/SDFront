@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 // componentes
-import { ListarProductosComponent } from './components/listar-productos/listar-productos.component';
+import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 const routes: Routes = [
-  { path: '', component: ListarProductosComponent },
-  { path: 'crear-producto', component: CrearProductoComponent },
-  { path: 'editar-producto/:id', component: CrearProductoComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
-];
+  { path: '', component: NavBarComponent,
+    children: [
+      { path: '', component: ListarUsuariosComponent },
+      { path: 'crear-usuario', component: CrearUsuarioComponent },
+      { path: 'editar-usuario/:id', component: CrearUsuarioComponent },
+      { path: '**', redirectTo: '', pathMatch: 'full' }]
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

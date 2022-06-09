@@ -9,14 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Componentes
 import { AppComponent } from './app.component';
-import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
-import { ListarProductosComponent } from './components/listar-productos/listar-productos.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CrearProductoComponent,
-    ListarProductosComponent
+    CrearUsuarioComponent,
+    ListarUsuariosComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
