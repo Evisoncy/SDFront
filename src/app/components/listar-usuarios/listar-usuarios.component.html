@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="row center">
-        <div class="col-lg-8 offset-lg-2">
+        <div class="">
             <div class="card">
                 <div class="card-body text-center">
                     <span class="titulo">LISTADO DE USUARIOS</span>
@@ -13,7 +13,8 @@
                             <th scope="col">Codigo</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Telefono</th>
-                            <th scope="col"></th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Opciones</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -23,14 +24,17 @@
                             <td>{{ usuario.codigo }}</td>
                             <td>{{ usuario.correo}}</td>
                             <td>{{ usuario.telefono}}</td>
+                            <td>{{ usuario.rol}}</td>
                             <td>
                                 <i [routerLink]="['/editar-usuario', usuario._id]" class="fas fa-edit text-primary"></i>
                                 <i (click)="eliminarUsuario(usuario._id)" class="fas fa-trash text-danger"></i>
+                                <i [routerLink]="['/ficha-medica',usuario._id]" class="fas fa-align-justify"></i>
+                                <i [routerLink]="['/mostrar-ficha', usuario._id]" class="fas fa-eye"></i>
                             </td>
                           </tr>
                         </tbody>
                       </table>
-                      <h5 style="text-align: start; margin-top: 10px;" *ngIf="listUsuarios.length == 0">No hay productos para mostrar</h5>
+                      <h5 style="text-align: start; margin-top: 10px;" *ngIf="listUsuarios.length == 0">No hay usuarios para mostrar</h5>
                 </div>
             </div>
         </div>

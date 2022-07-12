@@ -35,16 +35,14 @@
                 <ul>
                     <li class="menu-title">Main</li>
                     <li routerLinkActive="active" >
-                        <a><i class="fa fa-home"></i> <span>Inicio</span></a>
+                        <a [routerLink]="['./inicio']"><i class="fa fa-home"></i> <span>Inicio</span></a>
                     </li>
                     <li routerLinkActive="active">
-                        <a [routerLink]="['./lista-usuario']"><i class="fa fa-user-md"></i> <span>Usuarios</span></a>
+                        <a [routerLink]="['./usuarios']"><i class="fa fa-user-md"></i> <span>Usuarios</span></a>
                     </li>
+                    
                     <li routerLinkActive="active" >
-                        <a ><i class="fas fa-chart-bar"></i> <span>Estadisticas</span></a>
-                    </li>
-                    <li routerLinkActive="active" >
-                        <a ><i class="fas fa-user-tag"></i> <span>Roles</span></a>
+                        <a [routerLink]="['./roles']"><i class="fas fa-user-tag"></i> <span>Roles</span></a>
                     </li>
                     <!--
                         <li  routerLinkActive="active" *ngIf="IsAdmin">
@@ -52,9 +50,12 @@
                         </li>
                         -->
                     <li routerLinkActive="active" >
-                        <a ><i class="fas fa-blind"></i> <span>Discapacidades</span></a>
+                        <a [routerLink]="['./discapacidades']"><i class="fas fa-blind"></i> <span>Discapacidades</span></a>
                     </li>
-                    <!--<li routerLinkActive="active" >
+                   <!-- <li routerLinkActive="active" >
+                        <a ><i class="fas fa-chart-bar"></i> <span>Estadisticas</span></a>
+                    </li>
+                    <li routerLinkActive="active" >
                         <a [routerLink]="['./perfil-usuario',dni]"><i class="fas fa-user-alt"></i> <span>Perfil</span></a>
                     </li>-->
 

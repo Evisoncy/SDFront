@@ -4,13 +4,15 @@ export class Usuario {
     apellidos: string;
     codigo: string;
     correo: string;
-    telefono: number
+    telefono: number;
+    rol: string;
 
-    constructor(nombres: string, apellidos: string, codigo: string, correo: string, telefono:number ){
+    constructor(nombres: string, apellidos: string, codigo: string, correo: string, telefono:number,rol:string ){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.codigo = codigo;
         this.correo = correo;
         this.telefono = telefono;
+        this.rol=rol;
     }
 }

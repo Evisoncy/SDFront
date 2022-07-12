@@ -12,13 +12,27 @@ import { AppComponent } from './app.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FichaMedicaComponent } from './components/ficha-medica/ficha-medica.component';
+import { MostrarFichaMedicaComponent } from './components/mostrar-ficha-medica/mostrar-ficha-medica.component';
+import { RolesComponent } from './components/roles/roles.component';
+import { CrearRolComponent } from './components/roles/crear-rol/crear-rol.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { DiscapacidadesComponent } from './components/discapacidades/discapacidades.component';
+import { CrearDisComponent } from './components/discapacidades/crear-dis/crear-dis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearUsuarioComponent,
     ListarUsuariosComponent,
-    NavBarComponent
+    NavBarComponent,
+    FichaMedicaComponent,
+    MostrarFichaMedicaComponent,
+    RolesComponent,
+    CrearRolComponent,
+    InicioComponent,
+    DiscapacidadesComponent,
+    CrearDisComponent
   ],
   imports: [
     BrowserModule,
