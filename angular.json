@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cliente:build"
+            "browserTarget": "clinica:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cliente:build:production"
+              "browserTarget": "clinica:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cliente:build"
+            "browserTarget": "clinica:build"
           }
         },
         "test": {
@@ -115,18 +115,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cliente:serve"
+            "devServerTarget": "clinica:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cliente:serve:production"
+              "devServerTarget": "clinica:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "cliente",
+  "defaultProject": "clinica",
   "cli": {
     "analytics": "388806a7-4b7a-4237-980a-1eb1f5350a0d"
   }
