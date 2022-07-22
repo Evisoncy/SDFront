@@ -7,7 +7,7 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
-  url = 'http://localhost:4000/api/usuarios/';
+  url = 'https://backclinicafisi.herokuapp.com/api/usuarios/';
 
   constructor(private http: HttpClient) { }
 
