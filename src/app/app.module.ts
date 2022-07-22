@@ -19,6 +19,7 @@ import { CrearRolComponent } from './components/roles/crear-rol/crear-rol.compon
 import { InicioComponent } from './components/inicio/inicio.component';
 import { DiscapacidadesComponent } from './components/discapacidades/discapacidades.component';
 import { CrearDisComponent } from './components/discapacidades/crear-dis/crear-dis.component';
+import { MapsComponent } from './components/maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CrearDisComponent } from './components/discapacidades/crear-dis/crear-d
     CrearRolComponent,
     InicioComponent,
     DiscapacidadesComponent,
-    CrearDisComponent
+    CrearDisComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,

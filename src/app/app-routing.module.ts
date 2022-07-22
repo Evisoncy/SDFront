@@ -8,6 +8,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 
 // componentes
 import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
+import { MapsComponent } from './components/maps/maps.component';
 import { MostrarFichaMedicaComponent } from './components/mostrar-ficha-medica/mostrar-ficha-medica.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CrearRolComponent } from './components/roles/crear-rol/crear-rol.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'crear-rol', component: CrearRolComponent},
       { path: 'discapacidades', component: DiscapacidadesComponent},
       { path: 'crear-dis', component:CrearDisComponent},
+      { path: 'map', component: MapsComponent},
       { path: '**', redirectTo: '', pathMatch: 'full' }]
   }];
 
