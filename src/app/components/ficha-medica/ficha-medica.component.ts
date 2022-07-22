@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Discapacidad } from 'src/app/models/discapacidad';
 import { Ficha } from 'src/app/models/ficha';
+import { DiscapacidadService } from 'src/app/services/discapacidad';
 import { FichaService } from 'src/app/services/ficha.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
@@ -12,10 +14,12 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class FichaMedicaComponent implements OnInit {
   fichaForm!: FormGroup;
-  usuario=[];
+  listD:Discapacidad[]=[];
+  listS=[{'nombre':'A+'},{'nombre':'A-'},{'nombre':'B+'},{'nombre':'B-'},{'nombre':'AB+'},{'nombre':'AB-'},{'nombre':'O+'},{'nombre':'O-'}];
+  listSeguro=[{'nombre':'EPS'},{'nombre':'UNMSM'},{'nombre':'MINSA'},{'nombre':'ESSALUD'}];
   id: string | null;
   activatedRoute: any;
-  constructor(private _usuarioService:FichaService,private service:UsuarioService,
+  constructor(private d:DiscapacidadService ,private _usuarioService:FichaService,private service:UsuarioService,
     private fb: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
@@ -26,13 +30,14 @@ export class FichaMedicaComponent implements OnInit {
         medicamentoHabitual: ['', Validators.required],
         medicamentoAlergico: ['', Validators.required],
         seguroMedico: ['', Validators.required],
-        anio: ['',Validators.required]
+        anio: ['',Validators.required],
+        discapacidad: ['',Validators.required],
     })
      this.id = this.aRouter.snapshot.paramMap.get('id');
    }
 
   ngOnInit(): void {
-    
+    this.obtenerDs()
   }
   agregarFicha() {
     
@@ -42,18 +47,29 @@ export class FichaMedicaComponent implements OnInit {
       medicamentoHabitual: this.fichaForm.get('medicamentoHabitual')?.value,
       medicamentoAlergico: this.fichaForm.get('medicamentoAlergico')?.value,
       seguroMedico:this.fichaForm.get('seguroMedico')?.value,
-      anio:this.fichaForm.get('anio')?.value
+      anio:this.fichaForm.get('anio')?.value,
+      discapacidad:this.fichaForm.get('discapacidad')?.value
     }
      
     console.log(PRODUCTO); 
       
       this._usuarioService.guardarFicha(PRODUCTO).subscribe(data => {
         this.toastr.success('La ficha fue registrada con exito!', 'Ficha Registrada');
-        this.router.navigate(['/']);
+        this.router.navigate(['/usuarios']);
       }, error => {
         console.log(error);
         this.fichaForm.reset();
       })
     
+  }
+  obtenerDs(){
+    this.d.obtenerDs().subscribe(data=>{
+      console.log(data)
+      this.listD = data;
+    }, error => {
+      console.log(error);
+    
+    })
+    console.log(this.listD)
   }
 }

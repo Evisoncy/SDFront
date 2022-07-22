@@ -7,7 +7,7 @@ import { Ficha } from '../models/ficha';
   providedIn: 'root'
 })
 export class FichaService {
-  url = 'https://backclinicafisi.herokuapp.com/api/ficha/';
+  url = 'http://localhost:4000/api/ficha/';
   
   constructor(private http: HttpClient) { }
 

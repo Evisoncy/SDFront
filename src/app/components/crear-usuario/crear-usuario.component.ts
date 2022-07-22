@@ -86,5 +86,6 @@ export class CrearUsuarioComponent implements OnInit {
       console.log(error);
     
     })
+    console.log(this.listRols)
   }
 }

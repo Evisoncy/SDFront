@@ -6,3 +6,8 @@
     margin-top: 100px;
     margin-left: 190px;
 }
+
+.card-box{
+    background-color: rgb(225, 227, 240);
+    border: 5px;
+}

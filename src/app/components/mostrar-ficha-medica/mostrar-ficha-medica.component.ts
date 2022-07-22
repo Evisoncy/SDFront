@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Usuario } from 'src/app/models/usuario';
 import { FichaService } from 'src/app/services/ficha.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -10,9 +11,11 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./mostrar-ficha-medica.component.css']
 })
 export class MostrarFichaMedicaComponent implements OnInit {
+  Apellidos!:String
+  nombre!:string
   fichaForm:FormGroup;
   usuarioForm:FormGroup
-  usuarios=[];
+  usuarios:Usuario[]=[];
   datos!:string
   id!: string | null;
   constructor(private _usuarioService:FichaService,private s:UsuarioService, private fb: FormBuilder, private aRouter:ActivatedRoute) {
@@ -22,7 +25,8 @@ export class MostrarFichaMedicaComponent implements OnInit {
       medicamentoHabitual: ['', Validators.required],
       medicamentoAlergico: ['', Validators.required],
       seguroMedico: ['', Validators.required],
-      anio: ['',Validators.required]
+      anio: ['',Validators.required],
+      discapacidad:  ['',Validators.required],
   })
   this.usuarioForm = this.fb.group({
     usuario: ['', Validators.required],
@@ -38,9 +42,10 @@ export class MostrarFichaMedicaComponent implements OnInit {
     
     if(this.id !== null) {
     this.s.obtenerUsuario(this.id).subscribe(data=>{
-      console.log(data)
-      
-      this.usuarioForm.setValue({
+      console.log(data.nombres)
+      this.nombre=data.nombres
+      this.Apellidos=data.apellidos
+      /*this.usuarioForm.setValue({
         usuario: data.nombres,
         apellidos: data.apellidos,
         codigo: data.codigo,
@@ -48,14 +53,14 @@ export class MostrarFichaMedicaComponent implements OnInit {
         telefono: data.telefono
       }) 
       let datos=data.apellidos+" "+data.nombres
-      console.log(datos)
+      console.log(datos)*/
 
       })
     }
     this.obtenerFicha()
   }
   obtenerFicha() {
-    let ide='62baa5caa6945b3c2c6bead8'
+    let ide='62daed6239aa09368ce9fb46'
     
     console.log(this.id)
     if(this.id !== null) {
@@ -68,7 +73,8 @@ export class MostrarFichaMedicaComponent implements OnInit {
           medicamentoHabitual: data.medicamentoHabitual,
           medicamentoAlergico: data.medicamentoAlergico,
           seguroMedico: data.seguroMedico,
-          anio: data.anio
+          anio: data.anio,
+          discapacidad: data.discapacidad,
         }) 
       })
     }

@@ -7,12 +7,9 @@
                     <form class="mt-3" [formGroup]="fichaForm" (ngSubmit)="agregarFicha()">
                         <div class="mb-3">
                             <label >Tipo de Sangre</label>
-                            <input type="text" formControlName="tipoSangre" class="form-control form-control-lg"
-                                placeholder="">
-                            <div class="text-danger"
-                                *ngIf="fichaForm.get('usuario')?.hasError('required') && fichaForm.get('usuario')?.touched">
-                                <span><strong>es obligatorio</strong></span>
-                            </div>
+                                <select class="custom-select" formControlName="tipoSangre">
+                                    <option *ngFor ="let s of listS" [value]=s.nombre>{{s.nombre}}</option>
+                                </select>
                         </div>
                         <div class="mb-3">
                             <label >Medicamento habitual</label>
@@ -34,12 +31,9 @@
                         </div>
                         <div class="mb-3">
                             <label >Seguro medico</label>
-                            <input type="text" formControlName="seguroMedico" class="form-control form-control-lg"
-                                placeholder="">
-                            <div class="text-danger"
-                                *ngIf="fichaForm.get('correo')?.hasError('required') && fichaForm.get('correo')?.touched">
-                                <span>Correo<strong>es obligatoria</strong></span>
-                            </div>
+                            <select class="custom-select" formControlName="seguroMedico">
+                                <option *ngFor ="let s of listSeguro" [value]=s.nombre>{{s.nombre}}</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label >Diagnostico</label>
@@ -58,6 +52,12 @@
                                 *ngIf="fichaForm.get('telefono')?.hasError('required') && fichaForm.get('telefono')?.touched">
                                 <span>Telefono<strong>es obligatorio</strong></span>
                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label >Discapacidad</label>
+                            <select class="custom-select" formControlName="discapacidad">
+                             <option *ngFor ="let d of listD" [value]=d.nombre>{{d.nombre}}</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <button routerLink="/usuarios" class="btn btn-secondary btn-lg float-start">VOLVER</button>
