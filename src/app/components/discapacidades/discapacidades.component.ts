@@ -18,7 +18,7 @@ export class DiscapacidadesComponent implements OnInit {
   }
   obtenerDs(){
     this.service.obtenerDs().subscribe(data=>{
-      console.log(data)
+      
       this.listD = data;
     }, error => {
       console.log(error);

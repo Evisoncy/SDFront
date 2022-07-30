@@ -7,12 +7,12 @@ export class Ficha {
     seguroMedico: string;
     anio:number;
     discapacidad: string;
-    //email:string;
+    correo:string;
    
     
 
 
-    constructor(diagnostico: string, tipoSangre: string, medicamentoHabitual: string, medicamentoAlergico: string, seguroMedico:string, anio:number,email:string, discapacidad:string){
+    constructor(diagnostico: string, tipoSangre: string, medicamentoHabitual: string, medicamentoAlergico: string, seguroMedico:string, anio:number,email:string, discapacidad:string, correo:string){
         this.diagnostico = diagnostico;
         this.tipoSangre = tipoSangre;
         this.medicamentoHabitual = medicamentoHabitual;
@@ -20,7 +20,7 @@ export class Ficha {
         this.seguroMedico = seguroMedico;
         this.anio = anio;
         this.discapacidad = discapacidad;
-       //this.email = email;
+        this.correo = correo;
         
     }
 }

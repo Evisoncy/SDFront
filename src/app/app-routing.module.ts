@@ -11,6 +11,8 @@ import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usu
 import { MapsComponent } from './components/maps/maps.component';
 import { MostrarFichaMedicaComponent } from './components/mostrar-ficha-medica/mostrar-ficha-medica.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
+import { PruebaComponent } from './components/prueba/prueba.component';
 import { CrearRolComponent } from './components/roles/crear-rol/crear-rol.component';
 import { RolesComponent } from './components/roles/roles.component';
 
@@ -29,6 +31,7 @@ const routes: Routes = [
       { path: 'discapacidades', component: DiscapacidadesComponent},
       { path: 'crear-dis', component:CrearDisComponent},
       { path: 'map', component: MapsComponent},
+      { path: 'prueba', component: PruebaComponent},
       { path: '**', redirectTo: '', pathMatch: 'full' }]
   }];
 

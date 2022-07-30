@@ -20,6 +20,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { DiscapacidadesComponent } from './components/discapacidades/discapacidades.component';
 import { CrearDisComponent } from './components/discapacidades/crear-dis/crear-dis.component';
 import { MapsComponent } from './components/maps/maps.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { MapsComponent } from './components/maps/maps.component';
     InicioComponent,
     DiscapacidadesComponent,
     CrearDisComponent,
-    MapsComponent
+    MapsComponent,
+    PruebaComponent
+
   ],
   imports: [
     BrowserModule,

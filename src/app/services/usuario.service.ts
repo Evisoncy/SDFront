@@ -23,7 +23,7 @@ export class UsuarioService {
     return this.http.post(this.url, usuario);
   }
 
-  obtenerUsuario(id: string): Observable<any> {
+  obtenerUsuario(id: any): Observable<any> {
     return this.http.get(this.url + id);
   }
 

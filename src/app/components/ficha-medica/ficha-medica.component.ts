@@ -14,16 +14,22 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class FichaMedicaComponent implements OnInit {
   fichaForm!: FormGroup;
+  listFicha : []=[];
+  correo: any
   listD:Discapacidad[]=[];
   listS=[{'nombre':'A+'},{'nombre':'A-'},{'nombre':'B+'},{'nombre':'B-'},{'nombre':'AB+'},{'nombre':'AB-'},{'nombre':'O+'},{'nombre':'O-'}];
   listSeguro=[{'nombre':'EPS'},{'nombre':'UNMSM'},{'nombre':'MINSA'},{'nombre':'ESSALUD'}];
-  id: string | null;
+  //id!: string | null;
   activatedRoute: any;
   constructor(private d:DiscapacidadService ,private _usuarioService:FichaService,private service:UsuarioService,
     private fb: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
     private aRouter: ActivatedRoute) {
+
+   
+  
+     
    this.fichaForm = this.fb.group({
         diagnostico: ['', Validators.required],
         tipoSangre: ['', Validators.required],
@@ -32,14 +38,25 @@ export class FichaMedicaComponent implements OnInit {
         seguroMedico: ['', Validators.required],
         anio: ['',Validators.required],
         discapacidad: ['',Validators.required],
+        correo: ['']
     })
-     this.id = this.aRouter.snapshot.paramMap.get('id');
+      const id = this.aRouter.snapshot.paramMap.get('id');
+      this.service.obtenerUsuario(id).subscribe(data=>{
+      this.fichaForm.patchValue({ correo:data.correo });
+      
+     })
+     
+     
+     
+     
    }
 
   ngOnInit(): void {
     this.obtenerDs()
   }
+  
   agregarFicha() {
+    
     
       const PRODUCTO: Ficha = {
       diagnostico: this.fichaForm.get('diagnostico')?.value,
@@ -48,7 +65,9 @@ export class FichaMedicaComponent implements OnInit {
       medicamentoAlergico: this.fichaForm.get('medicamentoAlergico')?.value,
       seguroMedico:this.fichaForm.get('seguroMedico')?.value,
       anio:this.fichaForm.get('anio')?.value,
-      discapacidad:this.fichaForm.get('discapacidad')?.value
+      discapacidad:this.fichaForm.get('discapacidad')?.value,
+      correo: this.fichaForm.get('correo')?.value,
+      
     }
      
     console.log(PRODUCTO); 
@@ -64,12 +83,12 @@ export class FichaMedicaComponent implements OnInit {
   }
   obtenerDs(){
     this.d.obtenerDs().subscribe(data=>{
-      console.log(data)
+     
       this.listD = data;
     }, error => {
       console.log(error);
     
     })
-    console.log(this.listD)
+   
   }
 }
