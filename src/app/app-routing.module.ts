@@ -4,6 +4,8 @@ import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.
 import { CrearDisComponent } from './components/discapacidades/crear-dis/crear-dis.component';
 import { DiscapacidadesComponent } from './components/discapacidades/discapacidades.component';
 import { FichaMedicaComponent } from './components/ficha-medica/ficha-medica.component';
+import { IncidenciaComponent } from './components/incidencia/incidencia.component';
+import { MostrarIncidenciaComponent } from './components/incidencia/mostrar-incidencia/mostrar-incidencia.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 
 // componentes
@@ -31,6 +33,8 @@ const routes: Routes = [
       { path: 'discapacidades', component: DiscapacidadesComponent},
       { path: 'crear-dis', component:CrearDisComponent},
       { path: 'map', component: MapsComponent},
+      { path: 'incidencia/:id', component: IncidenciaComponent},
+      { path: 'mostrar-incidencia/:id', component: MostrarIncidenciaComponent},
       { path: 'prueba', component: PruebaComponent},
       { path: '**', redirectTo: '', pathMatch: 'full' }]
   }];

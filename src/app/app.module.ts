@@ -21,6 +21,8 @@ import { DiscapacidadesComponent } from './components/discapacidades/discapacida
 import { CrearDisComponent } from './components/discapacidades/crear-dis/crear-dis.component';
 import { MapsComponent } from './components/maps/maps.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { IncidenciaComponent } from './components/incidencia/incidencia.component';
+import { MostrarIncidenciaComponent } from './components/incidencia/mostrar-incidencia/mostrar-incidencia.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { PruebaComponent } from './components/prueba/prueba.component';
     DiscapacidadesComponent,
     CrearDisComponent,
     MapsComponent,
-    PruebaComponent
+    PruebaComponent,
+    IncidenciaComponent,
+    MostrarIncidenciaComponent
 
   ],
   imports: [

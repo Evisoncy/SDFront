@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="row center">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <span class="titulo text-center">FICHA MEDICA</span>
+                <div class="card-body">
+                    <form class="mt-3" [formGroup]="incidenciaForm" (ngSubmit)="agregarFicha()">
+                        <div class="mb-3">
+                            <label >Titulo</label>
+                            <input type="text" formControlName="titulo" class="form-control form-control-lg"
+                                placeholder="">
+                            <div class="text-danger"
+                                *ngIf="incidenciaForm.get('titulo')?.hasError('required') && incidenciaForm.get('titulo')?.touched">
+                                <span>Titulo<strong>es obligatorio</strong></span>
+                            </div>
+                            <label >Descripcion</label>
+                            <input type="text" formControlName="descripcion" class="form-control form-control-lg"
+                                placeholder="">
+                            <div class="text-danger"
+                                *ngIf="incidenciaForm.get('descripcion')?.hasError('required') && incidenciaForm.get('descripcion')?.touched">
+                                <span>Descripcion<strong>es obligatorio</strong></span>
+                            </div>
+                            <label >Fecha</label>
+                            <input type="date" formControlName="fecha" class="form-control form-control-lg"
+                                placeholder="">
+                            <div class="text-danger"
+                                *ngIf="incidenciaForm.get('fecha')?.hasError('required') && incidenciaForm.get('fecha')?.touched">
+                                <span>Fecha<strong>es obligatorio</strong></span>
+                            </div>
+                            <label >Lugar</label>
+                            <input type="text" formControlName="lugar" class="form-control form-control-lg"
+                                placeholder="">
+                            <div class="text-danger"
+                                *ngIf="incidenciaForm.get('lugar')?.hasError('required') && incidenciaForm.get('lugar')?.touched">
+                                <span>Lugar<strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <button routerLink="/usuarios" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <button type="submit" [disabled]="incidenciaForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

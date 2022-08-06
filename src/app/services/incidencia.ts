@@ -2,20 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ficha } from '../models/ficha';
+import { Incidencia } from '../models/incidencia';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FichaService {
-  url = 'http://localhost:4000/api/ficha/';
+export class IncidenciaService {
+  url = 'http://localhost:4000/api/incidencia/';
   
   constructor(private http: HttpClient) { }
 
-  guardarFicha(ficha: Ficha): Observable<any> {
-    return this.http.post(this.url, ficha);
+  guardarIncidencia(incidencia: Incidencia): Observable<any> {
+    return this.http.post(this.url, incidencia);
   }
 
-  obtenerFicha(id:string): Observable<any> {
+  obtenerIncidencia(id:string): Observable<any> {
     return this.http.get(this.url+id);
   }
 }
