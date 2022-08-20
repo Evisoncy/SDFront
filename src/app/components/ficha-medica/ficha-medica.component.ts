@@ -57,7 +57,7 @@ export class FichaMedicaComponent implements OnInit {
   
   agregarFicha() {
     
-    
+    const id = this.aRouter.snapshot.paramMap.get('id');
       const PRODUCTO: Ficha = {
       diagnostico: this.fichaForm.get('diagnostico')?.value,
       tipoSangre: this.fichaForm.get('tipoSangre')?.value,
@@ -74,7 +74,7 @@ export class FichaMedicaComponent implements OnInit {
       
       this._usuarioService.guardarFicha(PRODUCTO).subscribe(data => {
         this.toastr.success('La ficha fue registrada con exito!', 'Ficha Registrada');
-        this.router.navigate(['/usuarios']);
+        this.router.navigate(['/perfil',id]);
       }, error => {
         console.log(error);
         this.fichaForm.reset();

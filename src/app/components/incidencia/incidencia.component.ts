@@ -22,7 +22,7 @@ export class IncidenciaComponent implements OnInit {
   listD:Discapacidad[]=[];
   listS=[{'nombre':'A+'},{'nombre':'A-'},{'nombre':'B+'},{'nombre':'B-'},{'nombre':'AB+'},{'nombre':'AB-'},{'nombre':'O+'},{'nombre':'O-'}];
   listSeguro=[{'nombre':'EPS'},{'nombre':'UNMSM'},{'nombre':'MINSA'},{'nombre':'ESSALUD'}];
-  //id!: string | null;
+  id!: string | null;
   activatedRoute: any;
   constructor(private d:DiscapacidadService ,private _usuarioService:IncidenciaService,private service:UsuarioService,
     private fb: FormBuilder,
@@ -57,7 +57,8 @@ export class IncidenciaComponent implements OnInit {
   
   agregarFicha() {
     
-    
+    const id = this.aRouter.snapshot.paramMap.get('id');
+      
       const PRODUCTO: Incidencia = {
       titulo: this.incidenciaForm.get('titulo')?.value,
       descripcion: this.incidenciaForm.get('descripcion')?.value,
@@ -71,12 +72,12 @@ export class IncidenciaComponent implements OnInit {
       
       this._usuarioService.guardarIncidencia(PRODUCTO).subscribe(data => {
         this.toastr.success('La ficha fue registrada con exito!', 'Ficha Registrada');
-        this.router.navigate(['/usuarios']);
+        this.router.navigate(['/perfil',id]);
       }, error => {
         console.log(error);
         this.incidenciaForm.reset();
-      })
-    
+      
+     })
   }
- 
+
 }

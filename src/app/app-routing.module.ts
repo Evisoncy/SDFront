@@ -28,7 +28,7 @@ const routes: Routes = [
       { path: 'crear-usuario', component: CrearUsuarioComponent },
       { path: 'editar-usuario/:id', component: CrearUsuarioComponent },
       { path: 'ficha-medica/:id', component: FichaMedicaComponent},
-      { path: 'mostrar-ficha/:id',component:MostrarFichaMedicaComponent},
+      { path: 'mostrar-ficha/:id/:nombres',component:MostrarFichaMedicaComponent},
       { path: 'roles', component: RolesComponent },
       { path: 'crear-rol', component: CrearRolComponent},
       { path: 'discapacidades', component: DiscapacidadesComponent},
