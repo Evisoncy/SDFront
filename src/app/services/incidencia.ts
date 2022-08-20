@@ -8,7 +8,7 @@ import { Incidencia } from '../models/incidencia';
   providedIn: 'root'
 })
 export class IncidenciaService {
-  url = 'https://localhost:4000/api/incidencia/';
+  url = 'https://backclinicafisi.herokuapp.com/api/incidencia/';
   
   constructor(private http: HttpClient) { }
 

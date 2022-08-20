@@ -7,7 +7,7 @@ import { Discapacidad } from '../models/discapacidad';
   providedIn: 'root'
 })
 export class DiscapacidadService {
-  url = 'https://localhost:4000/api/discapacidad/';
+  url = 'https://backclinicafisi.herokuapp.com/api/discapacidad/';
   
   constructor(private http: HttpClient) { }
 
