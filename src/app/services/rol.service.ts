@@ -7,7 +7,7 @@ import { Rol } from '../models/rol';
   providedIn: 'root'
 })
 export class RolService {
-  url = 'https://backclinicafisi.herokuapp.com/api/rol/';
+  url = 'https://localhost:4000/api/rol/';
   
   constructor(private http: HttpClient) { }
 
