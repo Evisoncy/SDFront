@@ -1,0 +1,15 @@
+.profile-img-wrap{
+    width: 120px !important;
+    height: 120px !important;
+}
+ .personal{
+    list-style: none !important;
+ }
+
+ .staff-msg{
+    margin-top: 20px;
+ }
+
+ .btn{
+    background-color: #009efb;
+ }

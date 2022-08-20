@@ -13,6 +13,7 @@ import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usu
 import { MapsComponent } from './components/maps/maps.component';
 import { MostrarFichaMedicaComponent } from './components/mostrar-ficha-medica/mostrar-ficha-medica.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { CrearRolComponent } from './components/roles/crear-rol/crear-rol.component';
@@ -35,7 +36,7 @@ const routes: Routes = [
       { path: 'map', component: MapsComponent},
       { path: 'incidencia/:id', component: IncidenciaComponent},
       { path: 'mostrar-incidencia/:id', component: MostrarIncidenciaComponent},
-      { path: 'prueba', component: PruebaComponent},
+      { path: 'perfil/:id', component: PerfilComponent},
       { path: '**', redirectTo: '', pathMatch: 'full' }]
   }];
 

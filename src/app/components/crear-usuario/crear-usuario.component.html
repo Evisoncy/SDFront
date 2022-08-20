@@ -2,50 +2,71 @@
     <div class="row center">
         <div class="col-lg-6 offset-lg-3">
             <div class="card">
-                <div class="card-body text-center">
+                <div class="card-body ">
                     <span class="titulo"> {{ titulo | uppercase }}</span>
                     <form class="mt-3" [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
                         <div class="mb-3">
+                            <label >Nombres</label>
                             <input type="text" formControlName="usuario" class="form-control form-control-lg"
                                 placeholder="nombres">
                             <div class="text-danger"
                                 *ngIf="usuarioForm.get('usuario')?.hasError('required') && usuarioForm.get('usuario')?.touched">
-                                <span>Nombres<strong>es obligatorio</strong></span>
+                                <span>Nombres<strong> es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
+                            <label >Apellidos</label>
                             <input type="text" formControlName="apellidos" class="form-control form-control-lg"
                                 placeholder="Apellidos">
                             <div class="text-danger"
                                 *ngIf="usuarioForm.get('apellidos')?.hasError('required') && usuarioForm.get('apellidos')?.touched">
-                                <span>Apellidos<strong>es obligatoria</strong></span>
+                                <span>Apellidos<strong> es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
+                            <label >DNI</label>
+                            <input type="text" formControlName="dni" class="form-control form-control-lg"
+                                placeholder="DNI">
+                            <div class="text-danger"
+                                *ngIf="usuarioForm.get('dni')?.hasError('required') && usuarioForm.get('dni')?.touched">
+                                <span>DNI<strong> es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label >Sexo</label>
+                                <select class="custom-select" formControlName="sexo">
+                                    <option *ngFor ="let s of listS" [value]=s.nombre>{{s.nombre}}</option>
+                                </select>
+                        </div>
+                        <div class="mb-3">
+                            <label >Codigo</label>
                             <input type="text" formControlName="codigo" class="form-control form-control-lg"
                                 placeholder="Codigo">
                             <div class="text-danger"
                                 *ngIf="usuarioForm.get('codigo')?.hasError('required') && usuarioForm.get('codigo')?.touched">
-                                <span>Codigo<strong>es obligatoria</strong></span>
+                                <span>Codigo<strong> es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
+                            <label >correo</label>
                             <input type="text" formControlName="correo" class="form-control form-control-lg"
                                 placeholder="usuario@unmsm.edu.pe">
                             <div class="text-danger"
                                 *ngIf="usuarioForm.get('correo')?.hasError('required') && usuarioForm.get('correo')?.touched">
-                                <span>Correo<strong>es obligatoria</strong></span>
+                                <span>Correo<strong> es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
+                            <label >Telefono</label>
                             <input type="number" formControlName="telefono" class="form-control form-control-lg"
                                 placeholder="959854545">
                             <div class="text-danger"
                                 *ngIf="usuarioForm.get('telefono')?.hasError('required') && usuarioForm.get('telefono')?.touched">
-                                <span>Telefono<strong>es obligatorio</strong></span>
+                                <span>Telefono<strong> es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
+                            <label >Rol</label>
                             <select class="custom-select" formControlName="rol">
                                 <option *ngFor ="let rol of listRols" [value]=rol.nombre>{{rol.nombre}}</option>
                             </select>

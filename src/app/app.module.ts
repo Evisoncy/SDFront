@@ -23,6 +23,7 @@ import { MapsComponent } from './components/maps/maps.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { IncidenciaComponent } from './components/incidencia/incidencia.component';
 import { MostrarIncidenciaComponent } from './components/incidencia/mostrar-incidencia/mostrar-incidencia.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { MostrarIncidenciaComponent } from './components/incidencia/mostrar-inci
     MapsComponent,
     PruebaComponent,
     IncidenciaComponent,
-    MostrarIncidenciaComponent
+    MostrarIncidenciaComponent,
+    PerfilComponent
 
   ],
   imports: [

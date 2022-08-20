@@ -15,6 +15,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class CrearUsuarioComponent implements OnInit {
   usuarioForm: FormGroup;
   listRols: Rol[]=[];
+  listS=[{'nombre':'Masculino'},{'nombre':'Femenino'} ]
   titulo = 'Crear Usuario';
   id: string | null;
   constructor(private fb: FormBuilder,
@@ -29,7 +30,9 @@ export class CrearUsuarioComponent implements OnInit {
       codigo: ['', Validators.required],
       correo: ['', Validators.required],
       telefono: ['',Validators.required],
-      rol:['', Validators.required]
+      rol:['', Validators.required],
+      dni:['', Validators.required],
+      sexo:['',Validators.required]
     })
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
@@ -48,6 +51,9 @@ export class CrearUsuarioComponent implements OnInit {
       correo: this.usuarioForm.get('correo')?.value,
       telefono:this.usuarioForm.get('telefono')?.value,
       rol: this.usuarioForm.get('rol')?.value,
+      dni: this.usuarioForm.get('dni')?.value,
+      sexo:this.usuarioForm.get('sexo')?.value
+
     }
 
     console.log(PRODUCTO);

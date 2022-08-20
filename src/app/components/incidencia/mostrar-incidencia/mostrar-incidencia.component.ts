@@ -59,11 +59,8 @@ export class MostrarIncidenciaComponent implements OnInit {
       }*/
     const idIncidencia=this.aRouter.snapshot.params['id'];
     console.log(idIncidencia)
-    this.s.obtenerUsuario(idIncidencia).subscribe(data => {
-      console.log(data.incidencia[0])
-      this.nombre=data.nombres
-        this.Apellidos=data.apellidos
-      this._usuarioService.obtenerIncidencia(data.incidencia[0]).subscribe(res=>{
+
+      this._usuarioService.obtenerIncidencia(idIncidencia).subscribe(res=>{
         console.log(res)
         this.incidenciaForm.setValue({
           titulo: res.titulo,
@@ -73,7 +70,7 @@ export class MostrarIncidenciaComponent implements OnInit {
           
         })
        })
-    })
+    
 
       
     }
